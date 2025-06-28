@@ -1,11 +1,23 @@
 package com.embarx.FirstSpring.job;
 
-public class Job {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Table;
+import jakarta.persistence.Id;
 
+@Entity
+//@Table(name = "job_table")
+public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
     private String location;
+
+    public Job() {
+    }
     public Job(Integer id, String name, String description, String location) {
         this.id = id;
         this.name = name;
