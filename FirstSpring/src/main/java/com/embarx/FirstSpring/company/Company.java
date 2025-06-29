@@ -2,6 +2,7 @@ package com.embarx.FirstSpring.company;
 import java.util.List;
 
 import com.embarx.FirstSpring.job.Job;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,6 +18,7 @@ public class Company {
     private String name;
     private String description;
 
+    @JsonIgnore
     @OneToMany(mappedBy="company")
     private List<Job> jobs;
 
