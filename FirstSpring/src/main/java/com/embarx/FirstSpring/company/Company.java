@@ -17,7 +17,7 @@ public class Company {
     private String name;
     private String description;
 
-    @OneToMany
+    @OneToMany(mappedBy="company")
     private List<Job> jobs;
 
     public Company() {

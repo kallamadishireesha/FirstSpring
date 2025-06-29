@@ -1,10 +1,12 @@
 package com.embarx.FirstSpring.job;
 
+import com.embarx.FirstSpring.company.Company;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Table;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 //@Table(name = "job_table")
@@ -16,6 +18,8 @@ public class Job {
     private String description;
     private String location;
 
+    @ManyToOne
+    private Company company;
     public Job() {
     }
     public Job(Integer id, String name, String description, String location) {
@@ -47,6 +51,14 @@ public class Job {
     }
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     
