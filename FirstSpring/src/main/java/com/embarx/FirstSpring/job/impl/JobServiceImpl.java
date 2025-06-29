@@ -57,6 +57,7 @@ public class JobServiceImpl implements JobService{
                 job.setName(updateJob.getName());
                 job.setDescription(updateJob.getDescription());
                 job.setLocation(updateJob.getLocation());
+                jobRepository.save(job);
                 return true;
             }
         return false;
